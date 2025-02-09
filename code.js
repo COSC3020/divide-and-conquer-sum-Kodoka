@@ -1,3 +1,5 @@
+
+
 // Returns the sum of the elements of an array.
 function divideAndConquerSum(a)
 {
@@ -10,7 +12,7 @@ function divideArray(arrayToSummarize, low, high)
     // If our low and high indices ever invert, just return, there's nothing to see in these forbidden regions.
     if(low > high)
     {
-        return;
+        return 0;
     }
     // If the region of the array we're looking at is a single element, the base case, then we'll return that element.
     else if(low === high)
