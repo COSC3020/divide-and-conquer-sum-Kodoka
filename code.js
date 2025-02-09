@@ -1,7 +1,3 @@
-// Delete when done testing.
-var testArr = [1, 2, 3, 4, 5, 6];
-console.log(divideAndConquerSum(testArr));
-
 // Returns the sum of the elements of an array.
 function divideAndConquerSum(a)
 {
@@ -24,8 +20,24 @@ function divideArray(arrayToSummarize, low, high)
     // Else, if the region is larger than a single element, we'll continue recursively calling on smaller regions.
     else if(low < high)
     {
-        var mid = Math.floor((low + high) / 2);
-        return divideArray(arrayToSummarize, low, mid) +
-            divideArray(arrayToSummarize, mid + 1, high);
+        // Calculate what one third of the length of the current region is.
+        var regionLength = high - low + 1;
+        var oneThird = Math.floor(regionLength / 3);
+
+        // If oneThird is 0, the region can't be split into three sub arrays, instead recursively sum the current array
+        // as two sub arrays.
+        if(oneThird === 0)
+        {
+            var mid = Math.floor((low + high) / 2);
+            return divideArray(arrayToSummarize, low, mid) +
+                divideArray(arrayToSummarize, mid + 1, high);
+        }
+
+        // Recursively sum the current array as three sub arrays.
+        var firstThird = low + oneThird - 1;
+        var secondThird = low + 2 * oneThird - 1;
+        return divideArray(arrayToSummarize, low, firstThird) +
+            divideArray(arrayToSummarize, firstThird + 1, secondThird) +
+            divideArray(arrayToSummarize, secondThird + 1, high);
     }
 }
