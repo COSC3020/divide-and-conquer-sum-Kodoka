@@ -25,3 +25,22 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+For each itteration of my code, n/3, but as there are 3 subdivisions, we get
+T(n)=3T(n/3), except when only 2 subdivision can be made, in which circumstance
+we get T(n)=2T(n/2). Additionally my code does some checking/calculation each
+itterations, adding O(1). Not accounting for constant factors, this gives a
+final T(n)=T(n)=$\Theta$.
+
+## Resources
+I used the following sources to help with my understanding of runtime, 'cause
+I'm sort of dense, and this just doesn't resonate with me.
+
+https://www.youtube.com/watch?v=BgLTDT03QtU
+https://www.geeksforgeeks.org/complete-guide-on-complexity-analysis/
+
+I certify that I have listed all sources used to complete this exercise,
+including the use of any Large Language Models. All of the work is my own, except
+where stated otherwise. I am aware that plagiarism carries severe penalties and
+that if plagiarism is suspected, charges may be filed against me without prior
+notice.
