@@ -30,7 +30,7 @@ For each itteration of my code, n/3, but as there are 3 subdivisions, we get
 T(n)=3T(n/3), except when only 2 subdivision can be made, in which circumstance
 we get T(n)=2T(n/2). Additionally my code does some checking/calculation each
 itterations, adding O(1). Not accounting for constant factors, this gives a
-final T(n)=T(n)=$\Theta$
+final T(n)=T(n)=θ(n)
 
 ## Resources
 I used the following sources to help with my understanding of runtime, 'cause
